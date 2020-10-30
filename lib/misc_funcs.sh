@@ -66,10 +66,12 @@ function export_env_vars() {
 function export_jpm_env() {
   mkdir -p ${build_path}/modules
 
+  export JANET_PATH=${build_path}/modules
+  output_line "- JANET_PATH=${build_path}/modules"
   export JANET_HEADERPATH=$(janet_path)
   output_line "- JANET_HEADERPATH=$(janet_path)"
-  export JANET_LIBPATH=${build_path}/modules
-  output_line "- JANET_LIBPATH=${build_path}/modules"
+  export JANET_LIBPATH=$(janet_path)
+  output_line "- JANET_LIBPATH=$(janet_path)"
   export JANET_BINPATH=${build_path}/build
   output_line "- JANET_BINPATH=${build_path}/build"
 }
