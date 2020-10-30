@@ -8,9 +8,9 @@ function download_janet() {
     local download_url="https://github.com/janet-lang/janet/releases/download/${janet_version}/janet-${janet_version}-linux.tar.gz"
 
     curl -sL ${download_url} -o ${cache_path}/$(janet_download_file) || exit 1
-    output_line "archive at ${download_url} downloaded"
+    output_line "${download_url} downloaded"
   else
-    output_line "cached archive used"
+    output_line "Cached file used"
   fi
 }
 
@@ -21,7 +21,7 @@ function install_janet() {
   cd $(janet_path)
 
   tar -xzf ${cache_path}/$(janet_download_file) --strip-components 1
-  output_line "archive unpacked"
+  output_line "Archive unpacked"
 
   cd - > /dev/null
 

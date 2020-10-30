@@ -40,7 +40,7 @@ function load_config() {
     source $custom_config_file
   else
     output_line "WARNING: no janet_buildpack.config in app root"
-    output_line "default config in buildpack used"
+    output_line "Default config in buildpack used"
   fi
 
   fix_janet_version
@@ -83,7 +83,7 @@ function check_stack() {
 
   if [ ! -f "${cache_path}/stack" ] || [ ! $(cat "${cache_path}/stack") = "${STACK}" ]; then
     output_section "Checking stack"
-    output_line "stack changed and rebuild required"
+    output_line "Stack changed and rebuild required"
     $(clear_cached_files)
   fi
 
@@ -121,8 +121,8 @@ function fix_janet_version() {
     fi
 
   else
-    output_line "invalid Janet version specified"
-    output_line "see the README for allowed formats at:"
+    output_line "Invalid Janet version specified"
+    output_line "See the README for allowed formats at:"
     output_line "https://github.com/pyrmont/heroku-buildpack-janet"
     exit 1
   fi
