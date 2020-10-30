@@ -4,13 +4,11 @@
 
 testDetectWithProjectFile() {
   touch ${BUILD_DIR}/project.janet
-  capture detect
-  assertCapturedSuccess
-  assertCaptured "Janet"
+  detect
+  assertAppDetected "Janet"
 }
 
 testDetectWithNoProjectFile() {
-  capture detect
-  assertCapturedError
-  assertCaptured "no"
+  detect
+  assertNoAppDetected
 }
