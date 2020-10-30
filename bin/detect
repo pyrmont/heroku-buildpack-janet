@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-if [[ -f $1/project.janet ]]; then
+if [ -f $1/project.janet ]; then
   echo "Janet" && exit 0
 else
   echo "no" && exit 1
