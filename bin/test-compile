@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+build_pack_path=$(cd $(dirname $(dirname $0)); pwd)
+
+mkdir -p tmp/build
+cp test/project.janet tmp/build/project.janet
+
+"$(dirname ${0:-})/compile" tmp/build tmp/cache tmp/env
+
+rm -rf tmp

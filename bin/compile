@@ -1,28 +1,41 @@
 #!/usr/bin/env bash
-# bin/compile <build-dir> <cache-dir>
 
-set -e
-set -o pipefail
+# If this var is set to true later on,
+# then janet will be rebuilt
+janet_changed=false
 
-BUILD_DIR=$1
-CACHE_DIR=$2
+build_pack_path=$(cd $(dirname $(dirname $0)); pwd)
 
-function indent() {
-  c='s/^/       /'
-  case $(uname) in
-    Darwin) sed -l "$c";;
-    *)      sed -u "$c";;
-  esac
-}
+# Ensure dirs are present
+mkdir -p $1 $2 $3
 
-cd $BUILD_DIR
+build_path=$(cd $1 && pwd)
+cache_path=$(cd $2 && pwd)
+env_path=$(cd $3 && pwd)
 
-# jpm deps
-echo "-----> Installing Dependencies"
-# jpm deps 2>&1 | indent
+source ${build_pack_path}/lib/path_funcs.sh
+source ${build_pack_path}/lib/misc_funcs.sh
+source ${build_pack_path}/lib/janet_funcs.sh
+source ${build_pack_path}/lib/app_funcs.sh
 
-# jpm build
-echo "-----> Building Artifacts"
+if [ -d $(janet_path) ]; then
+  echo "ERROR: cannot have .janet directory in app root"
+  exit 1
+fi
 
-# jpm install
-echo "-----> Installing Executable"
+mkdir $(janet_path)
+
+export_env_vars
+export_jpm_env
+load_config
+
+check_stack
+clean_cache
+
+download_janet
+install_janet
+
+restore_app
+app_dependencies
+compile_app
+backup_app
