@@ -9,8 +9,8 @@ test_detect_with_project_file() {
   assertCaptured "Janet"
 }
 
-test_detect_with_no_project_file() {
-  capture detect
-  assertCapturedError
-  assertCaptured "no"
-}
+# test_detect_with_no_project_file() {
+#   capture detect
+#   assertCapturedError
+#   assertCaptured "no"
+# }
