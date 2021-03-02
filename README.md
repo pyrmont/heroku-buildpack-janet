@@ -34,7 +34,7 @@ An example project is available [here][hello-janet].
 
 [hello-janet]: https://github.com/pyrmont/hello-janet
 
-### Using a specific version of the buildpack
+### Version Pinning
 
 The methods above always use the latest version of the buildpack. To use a
 specific version of the buildpack, choose a commit from the [commits][] page.
@@ -46,8 +46,8 @@ The commit SHA forms part of your buildpack URL.
 $ heroku buildpacks:set https://github.com/pyrmont/heroku-buildpack-janet.git#<SHA>
 ```
 
-**It is recommended that you use a buildpack URL with a commit SHA on production
-apps.** This prevents the unpleasant moment when your Heroku build fails because
+**It is recommended** that you use a buildpack URL with a commit SHA on production
+apps. This prevents the unpleasant moment when your Heroku build fails because
 the buildpack you use just got updated with a breaking change.
 
 ## Configuration
