@@ -9,7 +9,7 @@ It features:
 
 ## Usage
 
-```console
+```shell
 # Creating a Heroku app with this buildpack
 $ heroku create --buildpack pyrmont/janet
 
@@ -42,7 +42,7 @@ The commit SHA forms part of your buildpack URL.
 
 [commits]: https://github.com/pyrmont/heroku-buildpack-janet/commits/master
 
-```
+```shell
 $ heroku buildpacks:set https://github.com/pyrmont/heroku-buildpack-janet.git#<SHA>
 ```
 
