@@ -4,8 +4,8 @@ This is a buildpack for deploying applications written in Janet to Heroku.
 
 It features:
 
-- **easy configuration** with `janet_buildpack.config` file; and
-- caching of jpm dependencies and downloads.
+- easy configuration with the `janet_buildpack.config` file
+- caching of jpm dependencies and downloads
 
 ## Usage
 
@@ -23,6 +23,16 @@ $ heroku buildpacks:set https://github.com/pyrmont/heroku-buildpack-janet.git
 Your app will need its own [Procfile][].
 
 [Procfile]: https://devcenter.heroku.com/articles/procfile
+
+Your `project.janet` file must be configured to create an executable that will
+be launched by Heroku. This can be done using the `declare-executable` macro.
+Your Procfile then needs to be configured to launch this executable.
+
+### Example
+
+An example project is available [here][hello-janet].
+
+[hello-janet]: https://github.com/pyrmont/hello-janet
 
 ### Using a specific version of the buildpack
 
@@ -54,7 +64,7 @@ The current configuration options:
 
 ```shell
 # Janet version
-janet_version=1.12.2
+janet_version=1.15.3
 
 # Rebuild from scratch on every deploy
 always_rebuild=false
