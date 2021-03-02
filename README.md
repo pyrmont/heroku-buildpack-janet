@@ -79,4 +79,4 @@ Akash Manohar and contributors.
 
 ## Version
 
-The latest version is v1.0.0.
+The latest version is v1.0.1.
