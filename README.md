@@ -76,3 +76,7 @@ This buildpack is based on the [Elixir buildpack][elixir-bp]. Special thanks to
 Akash Manohar and contributors.
 
 [elixir-bp]: https://github.com/HashNuke/heroku-buildpack-elixir
+
+## Version
+
+The latest version is v4.
