@@ -68,10 +68,10 @@ function export_jpm_env() {
 
   export JANET_PATH=${build_path}/modules
   output_line "- JANET_PATH=${build_path}/modules"
-  export JANET_HEADERPATH=$(janet_path)
-  output_line "- JANET_HEADERPATH=$(janet_path)"
-  export JANET_LIBPATH=$(janet_path)
-  output_line "- JANET_LIBPATH=$(janet_path)"
+  export JANET_HEADERPATH=$(janet_path)/include
+  output_line "- JANET_HEADERPATH=$(janet_path)/include"
+  export JANET_LIBPATH=$(janet_path)/lib
+  output_line "- JANET_LIBPATH=$(janet_path)/lib"
   export JANET_BINPATH=${build_path}/build
   output_line "- JANET_BINPATH=${build_path}/build"
 }

@@ -20,13 +20,13 @@ function install_janet() {
   mkdir -p $(janet_path)
   cd $(janet_path)
 
-  tar -xzf ${cache_path}/$(janet_download_file) --strip-components 1
+  tar xfz ${cache_path}/$(janet_download_file) --strip-components=2
   output_line "Archive unpacked"
 
   cd - > /dev/null
 
-  chmod +x $(janet_path)/janet $(janet_path)/jpm
-  PATH=$(janet_path):${PATH}
+  chmod +x $(janet_path)/bin/janet $(janet_path)/bin/jpm
+  PATH=$(janet_path)/bin:${PATH}
 
   export LC_CTYPE=en_US.utf8
 }

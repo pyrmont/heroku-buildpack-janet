@@ -64,7 +64,7 @@ The current configuration options:
 
 ```shell
 # Janet version
-janet_version=1.15.3
+janet_version=1.16.1
 
 # Rebuild from scratch on every deploy
 always_rebuild=false
@@ -76,7 +76,3 @@ This buildpack is based on the [Elixir buildpack][elixir-bp]. Special thanks to
 Akash Manohar and contributors.
 
 [elixir-bp]: https://github.com/HashNuke/heroku-buildpack-elixir
-
-## Version
-
-The latest version is v1.0.1.
