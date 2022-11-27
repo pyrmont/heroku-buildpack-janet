@@ -64,7 +64,7 @@ The current configuration options:
 
 ```shell
 # Janet version
-janet_version=1.16.1
+janet_version=1.25.0
 
 # Rebuild from scratch on every deploy
 always_rebuild=false
